@@ -1,0 +1,126 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "AutoShop API",
+      "version": "1.0.0",
+      "description": "Multi-tenant avtoservis tizimi API"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "paths": {
+      "/api/superadmin/create-shop": {
+        "post": {
+          "summary": "Yangi shop yaratish",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "shopName": {
+                      "type": "string",
+                      "example": "yunusobod"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Shop yaratildi"
+            }
+          }
+        }
+      },
+      "/api/auth/register": {
+        "post": {
+          "summary": "Foydalanuvchi ro'yxatdan o'tishi",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": { "type": "string", "example": "user1" },
+                    "password": { "type": "string", "example": "password" },
+                    "shop": { "type": "string", "example": "yunusobod" }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Foydalanuvchi yaratildi" }
+          }
+        }
+      },
+      "/api/auth/login": {
+        "post": {
+          "summary": "Foydalanuvchi ro'yxatdan o'tishi",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": { "type": "string", "example": "user1" },
+                    "password": { "type": "string", "example": "password" },
+                    "shop": { "type": "string", "example": "yunusobod" }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Foydalanuvchi yaratildi" }
+          }
+        }
+      },
+      "/api/products/add-product": {
+        "post": {
+          "summary": "Mahsulotni ro'yxatdan o'tkazish",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string", "example": "Moy almashtirish" },
+                    "price": { "type": "number", "example": 240 },
+                    "quantity": { "type": "number", "example": 10 },
+                    "shop_name": { "type": "string", "example": "yunusobod" }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Mahsulot yaratildi" }
+          }
+        }
+      }
+    }
+  }
+  
