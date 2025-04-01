@@ -4,4 +4,4 @@ const MainDBSchema = new mongoose.Schema({
     shopName: { type: String, unique: true, required: true }
 });
 
-module.exports = mongoose.model('MainDB', MainDBSchema);
+module.exports = mongoose.model('shopname', MainDBSchema);

@@ -3,7 +3,7 @@ const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
 const getTenantConnection = require('../utils/getTenantConnection');
 const User = require('../models/User');
-const mongoose = require('mongoose');
+const Product = require('../models/Product')
 
 router.post('/add-product', authMiddleware('user'), async (req, res) => {
     try {
@@ -27,13 +27,6 @@ router.post('/add-product', authMiddleware('user'), async (req, res) => {
         if (tenantDb === 'no_registr') return res.status(400).json({message:'Siz bu korxonaga mahsulot royxatga ololmaysiz'});
         console.log(`Tenant DB nomi: ${shopName}`)
         // 4️⃣ Product modelini yaratamiz (har bir tenant uchun alohida)
-        const Product = mongoose.model('Product', new mongoose.Schema({
-            name: String,
-            price: Number,
-            quantity: Number,
-            shop_name:String,
-            createdAt: { type: Date, default: Date.now }
-        }));
 
         // 5️⃣ Mahsulot yaratamiz
         const newProduct = new Product({ name, price,shop_name });
