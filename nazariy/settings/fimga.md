@@ -1,0 +1,1 @@
+https://www.figma.com/design/RxDp2YoLRFJs5thDkC89vx/warehouse-diplom-work?node-id=0-1&p=f&t=3voPR8c06CWd463J-0
