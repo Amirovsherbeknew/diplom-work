@@ -16,12 +16,12 @@ app.use(cors());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routerni o'rnatish
-const superadminRoutes = require('./routes/superadmin');
+const superadminRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/users');
 
-app.use('/api/superadmin', superadminRoutes);
+app.use('/api/shop', superadminRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);

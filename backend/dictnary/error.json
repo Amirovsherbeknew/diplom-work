@@ -4,5 +4,14 @@
     },
     "1001":{
         "message":"Sizda bunday huquqlar yo'q"
+    },
+    "2000":{
+        "message":"Bunday korxona tizimda mavjud"
+    },
+    "2001":{
+        "message":"Bu INN raqam tizimda mavjud"
+    },
+    "2002":{
+        "message":"Bu qisqa nomga ega korxona tizimda mavjud"
     }
 }

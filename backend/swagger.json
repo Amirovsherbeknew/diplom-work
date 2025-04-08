@@ -25,7 +25,17 @@
       }
     ],
     "paths": {
-      "/api/superadmin/create-shop": {
+      "/api/shop/": {
+        "get": {
+          "summary": "Shoplarni ro'yxati",
+          "responses": {
+            "201": {
+              "description": "Shop yaratildi"
+            }
+          }
+        }
+      },
+      "/api/shop/create-shop": {
         "post": {
           "summary": "Yangi shop yaratish",
           "requestBody": {
@@ -38,6 +48,10 @@
                     "shopName": {
                       "type": "string",
                       "example": "yunusobod"
+                    },
+                    "inn": {
+                      "type": "string",
+                      "example": "193218"
                     }
                   }
                 }

@@ -3,10 +3,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #BE202F;
+}
+
+@layer base {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-bg-linear {
+    background: linear-gradient(217.8deg, #021B79 -18.12%, #BE202F -7.42%, #9C2240 34.27%, #562561 88.39%, #02298A 153.67%);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
+  --primary-color: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

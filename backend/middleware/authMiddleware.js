@@ -1,6 +1,6 @@
 // backend/middleware/authMiddleware.js
 const jwt = require('jsonwebtoken');
-
+const Error = require('../utils/Error')
 const authMiddleware = (requiredRole) => {
   return (req, res, next) => {
     const token = req.headers.authorization;
